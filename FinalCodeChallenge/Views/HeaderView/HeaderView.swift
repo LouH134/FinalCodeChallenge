@@ -74,7 +74,7 @@ class HeaderView: UIView{
     //MARK: - IBAction
     
     @IBAction func backBtnPressed(_ sender: Any) {
-        
+        self.parentViewController?.dismiss(animated: true, completion: nil)
     }
     
     

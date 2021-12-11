@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3D4B11B53C771A2D24DCD3A4 /* Pods_FinalCodeChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C653BE159F8D8C0F8743C68 /* Pods_FinalCodeChallenge.framework */; };
+		6118938A27643E9D00F5FF66 /* ViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6118938927643E9D00F5FF66 /* ViewController+.swift */; };
+		6118938C276440B300F5FF66 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6118938B276440B300F5FF66 /* UIView+.swift */; };
 		61845337276424F400D03BB8 /* LHProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61845336276424F400D03BB8 /* LHProfileViewController.swift */; };
 		6184533A276425B900D03BB8 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61845339276425B900D03BB8 /* HeaderView.swift */; };
 		6184533C276425D300D03BB8 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6184533B276425D300D03BB8 /* HeaderView.xib */; };
@@ -44,6 +46,8 @@
 		113C2025301140AC4DDA18B2 /* Pods-FinalCodeChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalCodeChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-FinalCodeChallengeTests/Pods-FinalCodeChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		3DD7E2040B0C244C876EE591 /* Pods-FinalCodeChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalCodeChallenge.release.xcconfig"; path = "Target Support Files/Pods-FinalCodeChallenge/Pods-FinalCodeChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		4C653BE159F8D8C0F8743C68 /* Pods_FinalCodeChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinalCodeChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6118938927643E9D00F5FF66 /* ViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+.swift"; sourceTree = "<group>"; };
+		6118938B276440B300F5FF66 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		61845336276424F400D03BB8 /* LHProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LHProfileViewController.swift; sourceTree = "<group>"; };
 		61845339276425B900D03BB8 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		6184533B276425D300D03BB8 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
@@ -95,11 +99,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		618453382764259900D03BB8 /* Views */ = {
+		6118938727643DC200F5FF66 /* HeaderView */ = {
 			isa = PBXGroup;
 			children = (
 				61845339276425B900D03BB8 /* HeaderView.swift */,
 				6184533B276425D300D03BB8 /* HeaderView.xib */,
+			);
+			path = HeaderView;
+			sourceTree = "<group>";
+		};
+		6118938827643DDF00F5FF66 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6118938927643E9D00F5FF66 /* ViewController+.swift */,
+				6118938B276440B300F5FF66 /* UIView+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		618453382764259900D03BB8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6118938727643DC200F5FF66 /* HeaderView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -131,6 +152,7 @@
 			children = (
 				61CAEB792764063100C98317 /* AppDelegate.swift */,
 				61CAEB7B2764063100C98317 /* SceneDelegate.swift */,
+				6118938827643DDF00F5FF66 /* Extensions */,
 				618453382764259900D03BB8 /* Views */,
 				61CAEB7F2764063100C98317 /* Main.storyboard */,
 				61845336276424F400D03BB8 /* LHProfileViewController.swift */,
@@ -421,10 +443,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6118938C276440B300F5FF66 /* UIView+.swift in Sources */,
 				61CAEB7A2764063100C98317 /* AppDelegate.swift in Sources */,
 				61845337276424F400D03BB8 /* LHProfileViewController.swift in Sources */,
 				61CAEB7C2764063100C98317 /* SceneDelegate.swift in Sources */,
 				6184533A276425B900D03BB8 /* HeaderView.swift in Sources */,
+				6118938A27643E9D00F5FF66 /* ViewController+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
