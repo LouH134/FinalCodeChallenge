@@ -1,13 +1,13 @@
 //
-//  LHProfileViewController.swift
+//  LHChangePasswordViewController.swift
 //  FinalCodeChallenge
 //
-//  Created by Louis Harris on 12/10/21.
+//  Created by Louis Harris on 12/11/21.
 //
 
 import UIKit
 
-class LHProfileViewController: UIViewController {
+class LHChangePasswordViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
