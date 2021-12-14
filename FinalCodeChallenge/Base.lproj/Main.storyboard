@@ -136,6 +136,9 @@
                                                 <state key="normal" title="Change Password">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="changePasswordBtnPressed:" destination="oXy-Nc-xhu" eventType="touchUpInside" id="Azf-H5-94r"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -164,6 +167,10 @@
                             <constraint firstItem="3SF-QR-sbe" firstAttribute="leading" secondItem="EcW-r5-2qA" secondAttribute="leading" id="yX0-N5-wWc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnChangePassword" destination="9Yi-sx-lPx" id="i5f-hB-Jq6"/>
+                        <outlet property="tableView" destination="own-gW-UaZ" id="Zho-gR-mMJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nqp-kB-xIf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

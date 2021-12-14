@@ -47,8 +47,6 @@ class LHProfileViewController: UIViewController, UITableViewDelegate, UITableVie
         
         //somehow connect user to cell's name label
         
-        
-        
         return cell
     }
     
@@ -59,6 +57,8 @@ class LHProfileViewController: UIViewController, UITableViewDelegate, UITableVie
         
         let cell = UINib(nibName: "ProfileTableViewCell", bundle: nil)
         tableView.register(cell, forCellReuseIdentifier: "ProfileTableViewCell")
+        
+        tableView.reloadData()
     }
     
     //TO DO: Figure out why it crashed.Something to do with the label category. Network connections to get username,firstname,lastname then update cell label with data. Then Do network save when buttons pressed, figure out the error for the save

@@ -57,7 +57,25 @@ class NetworkManager{
             response in
             
             switch response.result{
-            case.success(let data):
+            case .success(let data):
+                let completionResponse = self.decode(item: JSONResponse.self, data: data)
+                print(completionResponse.0)
+                break
+                
+            case .failure(let error):
+                print(error)
+            }
+        })
+    }
+    
+    func updatePassword(oldPassword: String, newPassword: String, completion: @escaping(JSONResponse?, Error?) -> Void){
+        let parameters: Parameters = ["oldPassword": "oldPassword", "newPassword": "newPassword"]
+        
+        AF.request("URL/profiles/password/change", method: .post, parameters: parameters).responseData(completionHandler: {
+            response in
+            
+            switch response.result{
+            case .success(let data):
                 let completionResponse = self.decode(item: JSONResponse.self, data: data)
                 print(completionResponse.0)
                 break
