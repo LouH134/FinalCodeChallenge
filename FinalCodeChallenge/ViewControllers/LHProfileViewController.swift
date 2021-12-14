@@ -61,7 +61,7 @@ class LHProfileViewController: UIViewController, UITableViewDelegate, UITableVie
         tableView.reloadData()
     }
     
-    //TO DO: Figure out why it crashed.Something to do with the label category. Network connections to get username,firstname,lastname then update cell label with data. Then Do network save when buttons pressed, figure out the error for the save
+    //TO DO: Figure out why it crashed. Has to do with categoriesSetup is a Nil, it shouldn't be. Network connections to get username,firstname,lastname then update cell label with data. Then Do network save when buttons pressed, figure out the error for the save
     
     
     //MARK: - IBAction
