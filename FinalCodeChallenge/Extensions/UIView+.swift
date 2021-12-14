@@ -32,4 +32,27 @@ extension UIView{
             }
         });
    }
+    
+    //MARK: - Animations
+    open func showInView(_ aView: UIView!, animated: Bool){
+        aView.addSubview(self)
+        if animated{
+            self.showAnimate()
+        }
+    }
+    
+    open func showInView(_ aView: UIView!, animated: Bool, onComplete: @escaping () -> Void){
+        aView.addSubview(self)
+        if animated{
+        }
+    }
+    
+    private func showAnimate(){
+        self.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
+        self.alpha = 0.0;
+        UIView.animate(withDuration: 0.25, animations: {
+            self.alpha = 1.0
+            self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+        });
+    }
 }

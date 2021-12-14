@@ -13,4 +13,15 @@ extension UIViewController{
         
         return storyboard.instantiateViewController(withIdentifier: String(describing: self))
     }
+    
+    func showMessage(title: String?, message: String?, okTxt: String? = "OK", onComplete: @escaping (Bool) -> Void){
+        let vi = LHAlertView(frame: self.view.frame, title: title, messsage: message, okText: okTxt)
+        
+        vi.showInView(self.view, animated: true)
+        vi.didPressOkButton = {
+            onComplete(true)
+        }
+        
+        
+    }
 }

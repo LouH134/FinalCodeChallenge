@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class LHProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -13,12 +14,18 @@ class LHProfileViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var btnSave: UIButton!
     @IBOutlet weak var btnChangePassword: UIButton!
     var categoriesSetup: CategoriesInfo?
+    var user: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ProgressHUD.show()
 
         setUpTableView()
         categoriesSetup = CategoriesInfo()
+        NetworkManager.shared.getUser()
+        ProgressHUD.dismiss()
+        //Some how connect user to NetworkManager getUser
     }
     
 
@@ -38,6 +45,10 @@ class LHProfileViewController: UIViewController, UITableViewDelegate, UITableVie
         let item = categoriesSetup!.data[indexPath.section].items[indexPath.row]
         cell.updateData(data: item)
         
+        //somehow connect user to cell's name label
+        
+        
+        
         return cell
     }
     
@@ -50,6 +61,28 @@ class LHProfileViewController: UIViewController, UITableViewDelegate, UITableVie
         tableView.register(cell, forCellReuseIdentifier: "ProfileTableViewCell")
     }
     
-    //TO DO: Network connections to get username,firstname,lastname then update cell label with data. Then Do network save when buttons pressed and go to the next screen
-
+    //TO DO: Figure out why it crashed.Something to do with the label category. Network connections to get username,firstname,lastname then update cell label with data. Then Do network save when buttons pressed, figure out the error for the save
+    
+    
+    //MARK: - IBAction
+    @IBAction func saveBtnPressed(_ sender: Any) {
+//        ProgressHUD.show()
+//
+//        NetworkManager.shared.updateUser(firstName: user?.firstName ?? "", lastName: user?.lastName ?? "", username: user?.username ?? "", completion: {
+//            error in
+//
+//            if error != nil{
+//                self.showMessage(title: "Problem", message: "\(error)", onComplete: <#T##(Bool) -> Void#>)
+//            }
+//            ProgressHUD.dismiss()
+//        })
+    }
+    
+    @IBAction func changePasswordBtnPressed(_ sender: Any) {
+        let vc = LHChangePasswordViewController.storyboardInstance(storyboardName: "Main")
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    
 }

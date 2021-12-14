@@ -9,7 +9,6 @@ import UIKit
 
 class ProfileTableViewCell: UITableViewCell {
     
-    
     @IBOutlet weak var lblCategory: UILabel!
     @IBOutlet weak var lblName: UILabel!
     var item: ProfileItem!
