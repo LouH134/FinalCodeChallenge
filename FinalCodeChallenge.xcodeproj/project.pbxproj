@@ -18,7 +18,6 @@
 		6118938A27643E9D00F5FF66 /* ViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6118938927643E9D00F5FF66 /* ViewController+.swift */; };
 		6118938C276440B300F5FF66 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6118938B276440B300F5FF66 /* UIView+.swift */; };
 		6120FBA42768082100D56165 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6120FBA32768082100D56165 /* NetworkManager.swift */; };
-		6120FBA627680BF700D56165 /* JSONResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6120FBA527680BF700D56165 /* JSONResponse.swift */; };
 		6120FBAA27685A9900D56165 /* ChangePasswordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6120FBA827685A9900D56165 /* ChangePasswordTableViewCell.swift */; };
 		6120FBAB27685A9900D56165 /* ChangePasswordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6120FBA927685A9900D56165 /* ChangePasswordTableViewCell.xib */; };
 		6177031D2765B51E008FA116 /* LHChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6177031C2765B51E008FA116 /* LHChangePasswordViewController.swift */; };
@@ -78,7 +77,6 @@
 		6118938927643E9D00F5FF66 /* ViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+.swift"; sourceTree = "<group>"; };
 		6118938B276440B300F5FF66 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		6120FBA32768082100D56165 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		6120FBA527680BF700D56165 /* JSONResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONResponse.swift; sourceTree = "<group>"; };
 		6120FBA827685A9900D56165 /* ChangePasswordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordTableViewCell.swift; sourceTree = "<group>"; };
 		6120FBA927685A9900D56165 /* ChangePasswordTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePasswordTableViewCell.xib; sourceTree = "<group>"; };
 		6177031C2765B51E008FA116 /* LHChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LHChangePasswordViewController.swift; sourceTree = "<group>"; };
@@ -202,7 +200,6 @@
 			children = (
 				225C3AB6276A968A00E1CC31 /* Use Cases */,
 				6120FBA32768082100D56165 /* NetworkManager.swift */,
-				6120FBA527680BF700D56165 /* JSONResponse.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -603,7 +600,6 @@
 				619E033E2765899100F544FD /* LHAlertView.swift in Sources */,
 				61CAEB7A2764063100C98317 /* AppDelegate.swift in Sources */,
 				61A1DC402766A32E005CBD0D /* ProfileTableViewCell.swift in Sources */,
-				6120FBA627680BF700D56165 /* JSONResponse.swift in Sources */,
 				6177031D2765B51E008FA116 /* LHChangePasswordViewController.swift in Sources */,
 				61A1DC462766A943005CBD0D /* ProfileSection.swift in Sources */,
 				61845337276424F400D03BB8 /* LHProfileViewController.swift in Sources */,

@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-class NetworkManager{
+class NetworkManager: AGetMyProfileUseCase {
     static let shared: NetworkManager = {
         return NetworkManager()
     }()
@@ -41,48 +41,58 @@ class NetworkManager{
         }
     }
     
-    func getUser(){
-        AF.request("url.com/profiles/me").validate().responseDecodable(of: User.self){
-            (response) in
-            guard let users = response.value else {return}
-            print(users)
+    
+    private static func switchAndComplete<T: Decodable>(dataResponse: DataResponse<Envelop<T>, AFError>,
+                                                        completion: (Result<T, Error>) -> Void) {
+        switch dataResponse.result {
+        case .success(let envelop):
+            completion(.success(envelop.data))
+            
+        case .failure(let afError):
+            completion(.failure(afError))
         }
     }
     
-    func updateUser(firstName: String, lastName: String, username: String, completion: @escaping(JSONResponse?, Error?) -> Void){
-        let parameters: Parameters = [
-            "firstName": "firstName", "lastName": "lastName", "username": "username"]
-        
-        AF.request("URL/profiles/update", method: .post, parameters: parameters).responseData(completionHandler: {
-            response in
-            
-            switch response.result{
-            case .success(let data):
-                let completionResponse = self.decode(item: JSONResponse.self, data: data)
-                print(completionResponse.0)
-                break
-                
-            case .failure(let error):
-                print(error)
-            }
-        })
+    func getMyProfile(_ completion: @escaping (Result<User, Error>) -> Void) {
+        AF.request("url.com/profiles/me").validate().responseDecodable(of: Envelop<User>.self) { response in
+            Self.switchAndComplete(dataResponse: response, completion: completion)
+        }
     }
     
-    func updatePassword(oldPassword: String, newPassword: String, completion: @escaping(JSONResponse?, Error?) -> Void){
-        let parameters: Parameters = ["oldPassword": "oldPassword", "newPassword": "newPassword"]
-        
-        AF.request("URL/profiles/password/change", method: .post, parameters: parameters).responseData(completionHandler: {
-            response in
-            
-            switch response.result{
-            case .success(let data):
-                let completionResponse = self.decode(item: JSONResponse.self, data: data)
-                print(completionResponse.0)
-                break
-                
-            case .failure(let error):
-                print(error)
-            }
-        })
-    }
+//    func updateUser(firstName: String, lastName: String, username: String, completion: @escaping(JSONResponse?, Error?) -> Void){
+//        let parameters: Parameters = [
+//            "firstName": "firstName", "lastName": "lastName", "username": "username"]
+//
+//        AF.request("URL/profiles/update", method: .post, parameters: parameters).responseData(completionHandler: {
+//            response in
+//
+//            switch response.result{
+//            case .success(let data):
+//                let completionResponse = self.decode(item: JSONResponse.self, data: data)
+//                print(completionResponse.0)
+//                break
+//
+//            case .failure(let error):
+//                print(error)
+//            }
+//        })
+//    }
+//
+//    func updatePassword(oldPassword: String, newPassword: String, completion: @escaping(JSONResponse?, Error?) -> Void){
+//        let parameters: Parameters = ["oldPassword": "oldPassword", "newPassword": "newPassword"]
+//
+//        AF.request("URL/profiles/password/change", method: .post, parameters: parameters).responseData(completionHandler: {
+//            response in
+//
+//            switch response.result{
+//            case .success(let data):
+//                let completionResponse = self.decode(item: JSONResponse.self, data: data)
+//                print(completionResponse.0)
+//                break
+//
+//            case .failure(let error):
+//                print(error)
+//            }
+//        })
+//    }
 }
