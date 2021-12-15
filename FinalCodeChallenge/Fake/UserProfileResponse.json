@@ -1,0 +1,9 @@
+{
+    "msg": "All good!",
+    "msg_code": 200,
+    "data":{
+        "firstName": "Daniel",
+        "lastName": "Vog",
+        "userName": "daniel@vog.com"
+    }
+}
