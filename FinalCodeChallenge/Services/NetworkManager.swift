@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-class NetworkManager: AGetMyProfileUseCase {
+class NetworkManager: AGetMyProfileUseCase, AUpdateMyProfileUseCase, AUpdatePasswordUseCase {
     static let shared: NetworkManager = {
         return NetworkManager()
     }()
@@ -59,40 +59,27 @@ class NetworkManager: AGetMyProfileUseCase {
         }
     }
     
-//    func updateUser(firstName: String, lastName: String, username: String, completion: @escaping(JSONResponse?, Error?) -> Void){
-//        let parameters: Parameters = [
-//            "firstName": "firstName", "lastName": "lastName", "username": "username"]
-//
-//        AF.request("URL/profiles/update", method: .post, parameters: parameters).responseData(completionHandler: {
-//            response in
-//
-//            switch response.result{
-//            case .success(let data):
-//                let completionResponse = self.decode(item: JSONResponse.self, data: data)
-//                print(completionResponse.0)
-//                break
-//
-//            case .failure(let error):
-//                print(error)
-//            }
-//        })
-//    }
-//
-//    func updatePassword(oldPassword: String, newPassword: String, completion: @escaping(JSONResponse?, Error?) -> Void){
-//        let parameters: Parameters = ["oldPassword": "oldPassword", "newPassword": "newPassword"]
-//
-//        AF.request("URL/profiles/password/change", method: .post, parameters: parameters).responseData(completionHandler: {
-//            response in
-//
-//            switch response.result{
-//            case .success(let data):
-//                let completionResponse = self.decode(item: JSONResponse.self, data: data)
-//                print(completionResponse.0)
-//                break
-//
-//            case .failure(let error):
-//                print(error)
-//            }
-//        })
-//    }
+    func updateProfile(with newProfile: User, completion: @escaping (Result<User, Error>) -> Void) {
+        
+        AF.request("URL/profiles/update",
+                   method: .post,
+                   parameters: newProfile,
+                   encoder: JSONParameterEncoder.default).responseDecodable(of: Envelop<User>.self)
+        { response in
+            Self.switchAndComplete(dataResponse: response, completion: completion)
+        }
+    }
+    
+    
+    func updatePassword(with body: UpdatePasswordRequest, completion: @escaping (Error?) -> Void) {
+        AF.request("URL/profiles/password/change",
+                   method: .post,
+                   parameters: body,
+                   encoder: JSONParameterEncoder.default).responseDecodable(of: Envelop<VoidCodable?>.self)
+        { response in
+            completion(response.error)
+        }
+    }
+    
+    
 }
