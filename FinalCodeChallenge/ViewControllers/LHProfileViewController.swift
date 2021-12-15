@@ -13,6 +13,9 @@ class LHProfileViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnSave: UIButton!
     @IBOutlet weak var btnChangePassword: UIButton!
+    
+    let getProfileUseCase: AGetMyProfileUseCase = FakeGetMyProfileUseCase(isSuccess: true)
+    
     var categoriesSetup: CategoriesInfo?
     var user: User?
     
@@ -23,9 +26,13 @@ class LHProfileViewController: UIViewController, UITableViewDelegate, UITableVie
 
         categoriesSetup = CategoriesInfo()
         setUpTableView()
-        NetworkManager.shared.getMyProfile{ result in }
-        ProgressHUD.dismiss()
-        //Some how connect user to NetworkManager getUser
+        
+        getProfileUseCase.getMyProfile{ result in
+            ProgressHUD.dismiss()
+            
+            // TODO: - reload table
+        }
+        
     }
     
 
