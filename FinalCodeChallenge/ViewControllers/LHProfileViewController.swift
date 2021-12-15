@@ -16,13 +16,13 @@ fileprivate extension Int {
 
 fileprivate extension User {
     
-    static var propertiesCount: Int {
+    static let propertiesCount: Int = {
         var index = 0
         while Self[label: index] != nil {
             index += 1
         }
         return index + 1
-    }
+    }()
     
     subscript(index: Int) -> String? {
         get {
@@ -67,9 +67,7 @@ class LHProfileViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var btnChangePassword: UIButton!
     
     let getProfileUseCase: AGetMyProfileUseCase = FakeGetMyProfileUseCase(isSuccess: true)
-    
-    private let rowsCount = User.propertiesCount
-    
+        
     private var user: User? {
         didSet {
             tableView.reloadData()
@@ -101,7 +99,7 @@ class LHProfileViewController: UIViewController, UITableViewDelegate, UITableVie
     // MARK: - TableView Protocols
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return rowsCount
+        return User.propertiesCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
