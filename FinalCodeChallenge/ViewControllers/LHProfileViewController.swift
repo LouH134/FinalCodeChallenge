@@ -21,8 +21,8 @@ class LHProfileViewController: UIViewController, UITableViewDelegate, UITableVie
         
         ProgressHUD.show()
 
-        setUpTableView()
         categoriesSetup = CategoriesInfo()
+        setUpTableView()
         NetworkManager.shared.getUser()
         ProgressHUD.dismiss()
         //Some how connect user to NetworkManager getUser
