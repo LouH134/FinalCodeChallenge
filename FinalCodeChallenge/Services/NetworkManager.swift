@@ -9,38 +9,12 @@ import Foundation
 import Alamofire
 
 class NetworkManager: AGetMyProfileUseCase, AUpdateMyProfileUseCase, AUpdatePasswordUseCase {
-    static let shared: NetworkManager = {
-        return NetworkManager()
-    }()
+    static let shared: NetworkManager = .init()
     
-    var viewController: UIViewController?
     
-    init(){
-        
-    }
+    private init(){ }
     
-    fileprivate func newJSONDecoder() -> JSONDecoder{
-        let decoder = JSONDecoder()
-        
-        return decoder
-    }
-    
-    func decode<T: Codable>(item: T.Type, data: Data) -> (T?, Error?){
-        do{
-            let returnObject = try newJSONDecoder().decode(item.self, from: data)
-            
-            return (returnObject, nil)
-        }catch let error{
-            #if DEBUG
-            
-            debugPrint("ERROR DATA:  \(error)")
-            
-            #endif
-            
-            return (nil, error)
-        }
-    }
-    
+    // MARK: - Helpers
     
     private static func switchAndComplete<T: Decodable>(dataResponse: DataResponse<Envelop<T>, AFError>,
                                                         completion: (Result<T, Error>) -> Void) {
@@ -52,6 +26,8 @@ class NetworkManager: AGetMyProfileUseCase, AUpdateMyProfileUseCase, AUpdatePass
             completion(.failure(afError))
         }
     }
+    
+    // MARK: - APIs
     
     func getMyProfile(_ completion: @escaping (Result<User, Error>) -> Void) {
         AF.request("url.com/profiles/me").validate().responseDecodable(of: Envelop<User>.self) { response in
