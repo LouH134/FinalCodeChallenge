@@ -9,6 +9,6 @@ import Foundation
 
 protocol AGetMyProfileUseCase {
     
-    func getMyProfile(_ completion: (Result<User, Error>) -> Void)
+    func getMyProfile(_ completion: @escaping (Result<User, Error>) -> Void)
     
 }

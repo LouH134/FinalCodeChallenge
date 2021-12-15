@@ -9,6 +9,6 @@ import Foundation
 
 protocol AUpdateMyProfileUseCase {
     
-    func updateProfile(with newProfile: User, completion: (Result<User, Error>))
+    func updateProfile(with newProfile: User, completion: @escaping (Result<User, Error>) -> Void)
     
 }

@@ -9,6 +9,6 @@ import Foundation
 
 protocol AUpdatePasswordUseCase {
     
-    func updatePassword(with body: UpdatePasswordRequest, completion: (Result<Void, Error>))
+    func updatePassword(with body: UpdatePasswordRequest, completion: @escaping (Result<Void, Error>) -> Void)
     
 }
