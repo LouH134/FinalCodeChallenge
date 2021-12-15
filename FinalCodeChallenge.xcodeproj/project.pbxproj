@@ -129,6 +129,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		225C3AB6276A968A00E1CC31 /* Use Cases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Use Cases";
+			sourceTree = "<group>";
+		};
+		225C3AB7276A96A500E1CC31 /* Decodable Response */ = {
+			isa = PBXGroup;
+			children = (
+				61A1DC492766AE5A005CBD0D /* User.swift */,
+				225C3AB4276A94DD00E1CC31 /* Envelop.swift */,
+			);
+			path = "Decodable Response";
+			sourceTree = "<group>";
+		};
 		6118938727643DC200F5FF66 /* HeaderView */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +166,7 @@
 		6120FBA2276806AF00D56165 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				225C3AB6276A968A00E1CC31 /* Use Cases */,
 				6120FBA32768082100D56165 /* NetworkManager.swift */,
 				6120FBA527680BF700D56165 /* JSONResponse.swift */,
 			);
@@ -197,12 +214,11 @@
 		61A1DC422766A6EB005CBD0D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				225C3AB7276A96A500E1CC31 /* Decodable Response */,
 				61A1DC432766A85D005CBD0D /* Categories.swift */,
 				61A1DC452766A943005CBD0D /* ProfileSection.swift */,
 				61A1DC472766AC5E005CBD0D /* ProfileItem.swift */,
-				61A1DC492766AE5A005CBD0D /* User.swift */,
 				61A1DC4B2766B0A4005CBD0D /* CategoriesInfo.swift */,
-				225C3AB4276A94DD00E1CC31 /* Envelop.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
