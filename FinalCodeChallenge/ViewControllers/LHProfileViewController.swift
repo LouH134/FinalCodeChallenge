@@ -8,6 +8,58 @@
 import UIKit
 import ProgressHUD
 
+fileprivate extension Int {
+    static let username = 0
+    static let firstName = 1
+    static let lastName = 2
+}
+
+fileprivate extension User {
+    
+    static var propertiesCount: Int {
+        var index = 0
+        while Self[label: index] != nil {
+            index += 1
+        }
+        return index + 1
+    }
+    
+    subscript(index: Int) -> String? {
+        get {
+            switch index {
+            case .username: return username
+            case .firstName: return firstName
+            case .lastName: return lastName
+            default: return nil
+            }
+        }
+        set {
+            switch index {
+            case .username:
+                username = newValue
+            case .firstName:
+                firstName = newValue
+            case .lastName:
+                lastName = newValue
+            default:
+                break
+            }
+        }
+    }
+    
+    static subscript(label index: Int) -> String? {
+        get {
+            switch index {
+            case .username: return "Username"
+            case .firstName: return "First Name"
+            case .lastName: return "Last Name"
+            default: return nil
+            }
+        }
+    }
+    
+}
+
 class LHProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
@@ -16,21 +68,30 @@ class LHProfileViewController: UIViewController, UITableViewDelegate, UITableVie
     
     let getProfileUseCase: AGetMyProfileUseCase = FakeGetMyProfileUseCase(isSuccess: true)
     
-    var categoriesSetup: CategoriesInfo?
-    var user: User?
+    private let rowsCount = User.propertiesCount
+    
+    private var user: User? {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ProgressHUD.show()
-
-        categoriesSetup = CategoriesInfo()
         setUpTableView()
         
+        ProgressHUD.show()
         getProfileUseCase.getMyProfile{ result in
-            ProgressHUD.dismiss()
-            
-            // TODO: - reload table
+            switch result {
+            case .success(let user):
+                ProgressHUD.dismiss()
+                self.user = user
+                
+            case .failure(let error):
+                ProgressHUD.showFailed(error.localizedDescription)
+            }
         }
         
     }
@@ -38,21 +99,16 @@ class LHProfileViewController: UIViewController, UITableViewDelegate, UITableVie
 
     
     // MARK: - TableView Protocols
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return categoriesSetup!.data.count
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categoriesSetup!.data[section].items.count
+        return rowsCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "ProfileTableViewCell", for: indexPath) as! ProfileTableViewCell
         
-        let item = categoriesSetup!.data[indexPath.section].items[indexPath.row]
-        cell.updateData(data: item)
-        
-        //somehow connect user to cell's name label
+        cell.lblCategory.text = User[label: indexPath.row]
+        cell.lblName.text = user?[indexPath.row]
         
         return cell
     }
