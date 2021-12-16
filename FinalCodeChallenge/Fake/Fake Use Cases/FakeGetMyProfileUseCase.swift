@@ -8,19 +8,6 @@
 import Foundation
 import Alamofire
 
-enum MyError: LocalizedError {
-    
-    case customMessage(String)
-    
-    var errorDescription: String? {
-        switch self {
-        case .customMessage(let string):
-            return string
-        }
-    }
-    
-}
-
 struct FakeGetMyProfileUseCase: AGetMyProfileUseCase {
     
     let isSuccess: Bool
