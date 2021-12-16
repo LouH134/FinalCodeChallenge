@@ -66,7 +66,7 @@ class LHProfileViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var btnSave: UIButton!
     @IBOutlet weak var btnChangePassword: UIButton!
     
-    let getProfileUseCase: AGetMyProfileUseCase = FakeGetMyProfileUseCase(isSuccess: true)
+    let getProfileUseCase: AGetMyProfileUseCase = FakeGetMyProfileUseCase(isSuccess: false)
         
     private var user: User? {
         didSet {

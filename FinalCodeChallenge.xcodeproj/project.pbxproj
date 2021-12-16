@@ -16,6 +16,7 @@
 		225C3AC6276A9AEF00E1CC31 /* ReadDataFromLocalFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225C3AC5276A9AEF00E1CC31 /* ReadDataFromLocalFile.swift */; };
 		225C3AC8276AA1A400E1CC31 /* VoidCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225C3AC7276AA1A400E1CC31 /* VoidCodable.swift */; };
 		225C3ACB276AA2CA00E1CC31 /* FakeGetMyProfileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225C3ACA276AA2CA00E1CC31 /* FakeGetMyProfileUseCase.swift */; };
+		22FA7A93276BA8B8007079DA /* ErrorResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 225C3AC4276A9A4800E1CC31 /* ErrorResponse.json */; };
 		3D4B11B53C771A2D24DCD3A4 /* Pods_FinalCodeChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C653BE159F8D8C0F8743C68 /* Pods_FinalCodeChallenge.framework */; };
 		6118938A27643E9D00F5FF66 /* ViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6118938927643E9D00F5FF66 /* ViewController+.swift */; };
 		6118938C276440B300F5FF66 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6118938B276440B300F5FF66 /* UIView+.swift */; };
@@ -469,6 +470,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				225C3AC3276A9A1100E1CC31 /* UserProfileResponse.json in Resources */,
+				22FA7A93276BA8B8007079DA /* ErrorResponse.json in Resources */,
 				61CAEB862764063200C98317 /* LaunchScreen.storyboard in Resources */,
 				61CAEB832764063200C98317 /* Assets.xcassets in Resources */,
 				6120FBAB27685A9900D56165 /* ChangePasswordTableViewCell.xib in Resources */,

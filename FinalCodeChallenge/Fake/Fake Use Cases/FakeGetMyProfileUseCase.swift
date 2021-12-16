@@ -13,13 +13,23 @@ struct FakeGetMyProfileUseCase: AGetMyProfileUseCase {
     let isSuccess: Bool
     
     func getMyProfile(_ completion: @escaping (Result<User, Error>) -> Void) {
-        if isSuccess,
-           let data = readDataFromLocalFile(forName: "UserProfileResponse"),
-           let envelop = try? JSONDecoder().decode(Envelop<User>.self, from: data)
-        {
-            completion(.success(envelop.data))
-        } else {
+        guard let data = readDataFromLocalFile(forName: isSuccess ? "UserProfileResponse" : "ErrorResponse") else {
             completion(.failure(NSError(domain: "fake", code: 0, userInfo: [NSLocalizedDescriptionKey: "failed to load fake data"])))
+            return
+        }
+        
+        do {
+            let envelop = try JSONDecoder().decode(Envelop<User>.self, from: data)
+            completion(.success(envelop.data))
+        } catch let decodingError as DecodingError {
+            if let jsonObject = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+               let msg = jsonObject["msg"] as? String {
+                completion(.failure(NSError(domain: "fake", code: 0, userInfo: [NSLocalizedDescriptionKey: msg])))
+            } else {
+                completion(.failure(decodingError))
+            }
+        } catch {
+            completion(.failure(error))
         }
     }
     
