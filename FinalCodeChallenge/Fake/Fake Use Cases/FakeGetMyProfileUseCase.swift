@@ -8,13 +8,26 @@
 import Foundation
 import Alamofire
 
+enum MyError: LocalizedError {
+    
+    case customMessage(String)
+    
+    var errorDescription: String? {
+        switch self {
+        case .customMessage(let string):
+            return string
+        }
+    }
+    
+}
+
 struct FakeGetMyProfileUseCase: AGetMyProfileUseCase {
     
     let isSuccess: Bool
     
     func getMyProfile(_ completion: @escaping (Result<User, Error>) -> Void) {
         guard let data = readDataFromLocalFile(forName: isSuccess ? "UserProfileResponse" : "ErrorResponse") else {
-            completion(.failure(NSError(domain: "fake", code: 0, userInfo: [NSLocalizedDescriptionKey: "failed to load fake data"])))
+            completion(.failure(MyError.customMessage("failed to load fake data")))
             return
         }
         
@@ -24,7 +37,7 @@ struct FakeGetMyProfileUseCase: AGetMyProfileUseCase {
         } catch let decodingError as DecodingError {
             if let jsonObject = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
                let msg = jsonObject["msg"] as? String {
-                completion(.failure(NSError(domain: "fake", code: 0, userInfo: [NSLocalizedDescriptionKey: msg])))
+                completion(.failure(MyError.customMessage(msg)))
             } else {
                 completion(.failure(decodingError))
             }
