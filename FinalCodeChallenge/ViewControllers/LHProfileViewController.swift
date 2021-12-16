@@ -66,7 +66,7 @@ class LHProfileViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var btnSave: UIButton!
     @IBOutlet weak var btnChangePassword: UIButton!
     
-    let getProfileUseCase: AGetMyProfileUseCase = FakeGetMyProfileUseCase(isSuccess: false)
+    let getProfileUseCase: AGetMyProfileUseCase = FakeGetMyProfileUseCase(isSuccess: true)
         
     private var user: User? {
         didSet {
@@ -140,9 +140,9 @@ class LHProfileViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     @IBAction func changePasswordBtnPressed(_ sender: Any) {
-        let vc = LHChangePasswordViewController.storyboardInstance(storyboardName: "Main")
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true, completion: nil)
+//        let vc = LHChangePasswordViewController.storyboardInstance(storyboardName: "Main")
+//        vc.modalPresentationStyle = .fullScreen
+//        self.present(vc, animated: true, completion: nil)
     }
     
     
