@@ -7,11 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		225C3AB5276A94DD00E1CC31 /* Envelop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225C3AB4276A94DD00E1CC31 /* Envelop.swift */; };
+		225C3AB9276A96F800E1CC31 /* AGetMyProfileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225C3AB8276A96F700E1CC31 /* AGetMyProfileUseCase.swift */; };
+		225C3ABB276A97F000E1CC31 /* AUpdateMyProfileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225C3ABA276A97F000E1CC31 /* AUpdateMyProfileUseCase.swift */; };
+		225C3ABD276A98C700E1CC31 /* AUpdatePasswordUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225C3ABC276A98C700E1CC31 /* AUpdatePasswordUseCase.swift */; };
+		225C3AC0276A993000E1CC31 /* UpdatePasswordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225C3ABF276A993000E1CC31 /* UpdatePasswordRequest.swift */; };
+		225C3AC3276A9A1100E1CC31 /* UserProfileResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 225C3AC2276A9A1100E1CC31 /* UserProfileResponse.json */; };
+		225C3AC6276A9AEF00E1CC31 /* ReadDataFromLocalFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225C3AC5276A9AEF00E1CC31 /* ReadDataFromLocalFile.swift */; };
+		225C3AC8276AA1A400E1CC31 /* VoidCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225C3AC7276AA1A400E1CC31 /* VoidCodable.swift */; };
+		225C3ACB276AA2CA00E1CC31 /* FakeGetMyProfileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225C3ACA276AA2CA00E1CC31 /* FakeGetMyProfileUseCase.swift */; };
+		22FA7A93276BA8B8007079DA /* ErrorResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 225C3AC4276A9A4800E1CC31 /* ErrorResponse.json */; };
+		22FA7A96276BAD84007079DA /* MyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FA7A95276BAD84007079DA /* MyError.swift */; };
 		3D4B11B53C771A2D24DCD3A4 /* Pods_FinalCodeChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C653BE159F8D8C0F8743C68 /* Pods_FinalCodeChallenge.framework */; };
 		6118938A27643E9D00F5FF66 /* ViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6118938927643E9D00F5FF66 /* ViewController+.swift */; };
 		6118938C276440B300F5FF66 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6118938B276440B300F5FF66 /* UIView+.swift */; };
 		6120FBA42768082100D56165 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6120FBA32768082100D56165 /* NetworkManager.swift */; };
-		6120FBA627680BF700D56165 /* JSONResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6120FBA527680BF700D56165 /* JSONResponse.swift */; };
 		6120FBAA27685A9900D56165 /* ChangePasswordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6120FBA827685A9900D56165 /* ChangePasswordTableViewCell.swift */; };
 		6120FBAB27685A9900D56165 /* ChangePasswordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6120FBA927685A9900D56165 /* ChangePasswordTableViewCell.xib */; };
 		6177031D2765B51E008FA116 /* LHChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6177031C2765B51E008FA116 /* LHChangePasswordViewController.swift */; };
@@ -58,12 +68,22 @@
 
 /* Begin PBXFileReference section */
 		113C2025301140AC4DDA18B2 /* Pods-FinalCodeChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalCodeChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-FinalCodeChallengeTests/Pods-FinalCodeChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
+		225C3AB4276A94DD00E1CC31 /* Envelop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Envelop.swift; sourceTree = "<group>"; };
+		225C3AB8276A96F700E1CC31 /* AGetMyProfileUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGetMyProfileUseCase.swift; sourceTree = "<group>"; };
+		225C3ABA276A97F000E1CC31 /* AUpdateMyProfileUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AUpdateMyProfileUseCase.swift; sourceTree = "<group>"; };
+		225C3ABC276A98C700E1CC31 /* AUpdatePasswordUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AUpdatePasswordUseCase.swift; sourceTree = "<group>"; };
+		225C3ABF276A993000E1CC31 /* UpdatePasswordRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePasswordRequest.swift; sourceTree = "<group>"; };
+		225C3AC2276A9A1100E1CC31 /* UserProfileResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UserProfileResponse.json; sourceTree = "<group>"; };
+		225C3AC4276A9A4800E1CC31 /* ErrorResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ErrorResponse.json; sourceTree = "<group>"; };
+		225C3AC5276A9AEF00E1CC31 /* ReadDataFromLocalFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadDataFromLocalFile.swift; sourceTree = "<group>"; };
+		225C3AC7276AA1A400E1CC31 /* VoidCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoidCodable.swift; sourceTree = "<group>"; };
+		225C3ACA276AA2CA00E1CC31 /* FakeGetMyProfileUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeGetMyProfileUseCase.swift; sourceTree = "<group>"; };
+		22FA7A95276BAD84007079DA /* MyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyError.swift; sourceTree = "<group>"; };
 		3DD7E2040B0C244C876EE591 /* Pods-FinalCodeChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalCodeChallenge.release.xcconfig"; path = "Target Support Files/Pods-FinalCodeChallenge/Pods-FinalCodeChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		4C653BE159F8D8C0F8743C68 /* Pods_FinalCodeChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinalCodeChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6118938927643E9D00F5FF66 /* ViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+.swift"; sourceTree = "<group>"; };
 		6118938B276440B300F5FF66 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		6120FBA32768082100D56165 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		6120FBA527680BF700D56165 /* JSONResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONResponse.swift; sourceTree = "<group>"; };
 		6120FBA827685A9900D56165 /* ChangePasswordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordTableViewCell.swift; sourceTree = "<group>"; };
 		6120FBA927685A9900D56165 /* ChangePasswordTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePasswordTableViewCell.xib; sourceTree = "<group>"; };
 		6177031C2765B51E008FA116 /* LHChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LHChangePasswordViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +147,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		225C3AB6276A968A00E1CC31 /* Use Cases */ = {
+			isa = PBXGroup;
+			children = (
+				225C3AB8276A96F700E1CC31 /* AGetMyProfileUseCase.swift */,
+				225C3ABA276A97F000E1CC31 /* AUpdateMyProfileUseCase.swift */,
+				225C3ABC276A98C700E1CC31 /* AUpdatePasswordUseCase.swift */,
+			);
+			path = "Use Cases";
+			sourceTree = "<group>";
+		};
+		225C3AB7276A96A500E1CC31 /* Decodable Response */ = {
+			isa = PBXGroup;
+			children = (
+				225C3AB4276A94DD00E1CC31 /* Envelop.swift */,
+				225C3AC7276AA1A400E1CC31 /* VoidCodable.swift */,
+				61A1DC492766AE5A005CBD0D /* User.swift */,
+			);
+			path = "Decodable Response";
+			sourceTree = "<group>";
+		};
+		225C3ABE276A98F600E1CC31 /* Encodable Request */ = {
+			isa = PBXGroup;
+			children = (
+				225C3ABF276A993000E1CC31 /* UpdatePasswordRequest.swift */,
+			);
+			path = "Encodable Request";
+			sourceTree = "<group>";
+		};
+		225C3AC1276A99EC00E1CC31 /* Fake */ = {
+			isa = PBXGroup;
+			children = (
+				225C3AC4276A9A4800E1CC31 /* ErrorResponse.json */,
+				225C3AC2276A9A1100E1CC31 /* UserProfileResponse.json */,
+				225C3AC5276A9AEF00E1CC31 /* ReadDataFromLocalFile.swift */,
+				225C3AC9276AA2B600E1CC31 /* Fake Use Cases */,
+			);
+			path = Fake;
+			sourceTree = "<group>";
+		};
+		225C3AC9276AA2B600E1CC31 /* Fake Use Cases */ = {
+			isa = PBXGroup;
+			children = (
+				225C3ACA276AA2CA00E1CC31 /* FakeGetMyProfileUseCase.swift */,
+			);
+			path = "Fake Use Cases";
+			sourceTree = "<group>";
+		};
+		22FA7A94276BAD73007079DA /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				22FA7A95276BAD84007079DA /* MyError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
 		6118938727643DC200F5FF66 /* HeaderView */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,8 +223,8 @@
 		6120FBA2276806AF00D56165 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				225C3AB6276A968A00E1CC31 /* Use Cases */,
 				6120FBA32768082100D56165 /* NetworkManager.swift */,
-				6120FBA527680BF700D56165 /* JSONResponse.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -195,10 +270,12 @@
 		61A1DC422766A6EB005CBD0D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				22FA7A94276BAD73007079DA /* Errors */,
+				225C3ABE276A98F600E1CC31 /* Encodable Request */,
+				225C3AB7276A96A500E1CC31 /* Decodable Response */,
 				61A1DC432766A85D005CBD0D /* Categories.swift */,
 				61A1DC452766A943005CBD0D /* ProfileSection.swift */,
 				61A1DC472766AC5E005CBD0D /* ProfileItem.swift */,
-				61A1DC492766AE5A005CBD0D /* User.swift */,
 				61A1DC4B2766B0A4005CBD0D /* CategoriesInfo.swift */,
 			);
 			path = Models;
@@ -240,6 +317,7 @@
 			children = (
 				61CAEB792764063100C98317 /* AppDelegate.swift */,
 				61CAEB7B2764063100C98317 /* SceneDelegate.swift */,
+				225C3AC1276A99EC00E1CC31 /* Fake */,
 				6118938827643DDF00F5FF66 /* Extensions */,
 				6120FBA2276806AF00D56165 /* Services */,
 				61A1DC422766A6EB005CBD0D /* Models */,
@@ -402,6 +480,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				225C3AC3276A9A1100E1CC31 /* UserProfileResponse.json in Resources */,
+				22FA7A93276BA8B8007079DA /* ErrorResponse.json in Resources */,
 				61CAEB862764063200C98317 /* LaunchScreen.storyboard in Resources */,
 				61CAEB832764063200C98317 /* Assets.xcassets in Resources */,
 				6120FBAB27685A9900D56165 /* ChangePasswordTableViewCell.xib in Resources */,
@@ -537,16 +617,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				61A1DC4A2766AE5A005CBD0D /* User.swift in Sources */,
+				225C3AB5276A94DD00E1CC31 /* Envelop.swift in Sources */,
 				6120FBAA27685A9900D56165 /* ChangePasswordTableViewCell.swift in Sources */,
+				22FA7A96276BAD84007079DA /* MyError.swift in Sources */,
 				61A1DC482766AC5E005CBD0D /* ProfileItem.swift in Sources */,
 				6118938C276440B300F5FF66 /* UIView+.swift in Sources */,
+				225C3AC6276A9AEF00E1CC31 /* ReadDataFromLocalFile.swift in Sources */,
+				225C3AC0276A993000E1CC31 /* UpdatePasswordRequest.swift in Sources */,
+				225C3ACB276AA2CA00E1CC31 /* FakeGetMyProfileUseCase.swift in Sources */,
+				225C3AC8276AA1A400E1CC31 /* VoidCodable.swift in Sources */,
+				225C3ABD276A98C700E1CC31 /* AUpdatePasswordUseCase.swift in Sources */,
 				619E033E2765899100F544FD /* LHAlertView.swift in Sources */,
 				61CAEB7A2764063100C98317 /* AppDelegate.swift in Sources */,
 				61A1DC402766A32E005CBD0D /* ProfileTableViewCell.swift in Sources */,
-				6120FBA627680BF700D56165 /* JSONResponse.swift in Sources */,
 				6177031D2765B51E008FA116 /* LHChangePasswordViewController.swift in Sources */,
 				61A1DC462766A943005CBD0D /* ProfileSection.swift in Sources */,
 				61845337276424F400D03BB8 /* LHProfileViewController.swift in Sources */,
+				225C3ABB276A97F000E1CC31 /* AUpdateMyProfileUseCase.swift in Sources */,
+				225C3AB9276A96F800E1CC31 /* AGetMyProfileUseCase.swift in Sources */,
 				61CAEB7C2764063100C98317 /* SceneDelegate.swift in Sources */,
 				61A1DC442766A85D005CBD0D /* Categories.swift in Sources */,
 				6184533A276425B900D03BB8 /* HeaderView.swift in Sources */,
@@ -733,6 +821,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZLE44N3L4M;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FinalCodeChallenge/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -762,6 +851,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZLE44N3L4M;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FinalCodeChallenge/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
